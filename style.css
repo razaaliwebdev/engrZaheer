@@ -1,0 +1,226 @@
+/* Background Image */
+body {
+    background: url('https://img.freepik.com/free-photo/modern-cnc-lathes-metalworking-industry_587448-4985.jpg?uid=R90236058&ga=GA1.1.269007744.1743356052&semt=ais_hybrid') no-repeat center center/cover;
+    min-height: 100vh;
+    /* Changed to min-height for flexibility */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    /* Reset default margin */
+}
+
+/* Main Container */
+.container {
+    background-color: rgba(255, 255, 255, 0.444);
+    padding: 1.5rem;
+    /* Relative unit for scalability */
+    border-radius: 10px;
+    color: white;
+    width: 90%;
+    /* Fluid width */
+    max-width: 500px;
+    /* Caps at 500px */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* Allows wrapping on small screens */
+    gap: 1rem;
+    /* Consistent spacing */
+}
+
+.logo img {
+    width: clamp(120px, 20vw, 180px);
+    /* Scales between 120px and 180px */
+    margin-bottom: 1rem;
+}
+
+.logo img:nth-child(2) {
+    border-radius: 10px;
+    border: 1px solid red;
+    width: clamp(140px, 25vw, 200px);
+    /* Slightly larger, scales responsively */
+    cursor: pointer;
+}
+
+.logo img:nth-child(2):hover {
+    transform: scale(1.1);
+    transition: transform 1s ease-in-out;
+    /* Specified property for transition */
+}
+
+/* Title */
+h1 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    /* Scales between 24px and 32px */
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+    color: rgb(229, 48, 84);
+}
+
+h3 {
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    /* Scales between 16px and 20px */
+    font-weight: normal;
+    margin: 1.25rem auto;
+    background-color: rgba(0, 0, 0, 0.997);
+    padding: 1.25rem;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+/* Visit Facebook Section */
+.vistFacebook {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    /* Scales between 16px and 20px */
+    margin: 1rem auto;
+    border: 1px solid white;
+    padding: clamp(1rem, 3vw, 1.5rem);
+    /* Responsive padding */
+    border-radius: 10px;
+    transition: border-color 0.5s ease-in;
+    cursor: pointer;
+}
+
+.vistFacebook:hover {
+    border: 1px solid blue;
+}
+
+.vistFacebook i {
+    color: #1877f2;
+    font-size: clamp(1.5rem, 4vw, 2.75rem);
+    /* Scales between 24px and 44px */
+    animation: blink 1s infinite alternate;
+}
+
+.vistFacebook a {
+    color: #1877f2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.vistFacebook .fa-arrow-right {
+    color: #1877f2;
+    font-size: clamp(1.25rem, 3vw, 1.875rem);
+    /* Scales between 20px and 30px */
+    animation: rightBlink 0.5s infinite alternate;
+}
+
+/* Visit Phone Section */
+.vistPhone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    /* Scales between 16px and 20px */
+    margin-top: 1rem;
+}
+
+.vistPhone i {
+    color: #00ff00;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    /* Scales between 24px and 40px */
+}
+
+.vistPhone .phone {
+    color: black;
+}
+
+/* Animations */
+@keyframes rightBlink {
+    0% {
+        transform: translateX(0.625rem);
+        /* 10px */
+    }
+
+    100% {
+        transform: translateX(0);
+        /* Reset for smoother animation */
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+
+    /* Small screens (mobile) */
+    .container {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    .logo {
+        flex-direction: column;
+        /* Stack logos vertically */
+        gap: 0.5rem;
+    }
+
+    .logo img {
+        width: clamp(100px, 30vw, 150px);
+        /* Smaller range */
+    }
+
+    .logo img:nth-child(2) {
+        width: clamp(120px, 35vw, 180px);
+    }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+
+    /* Medium screens (tablet) */
+    .container {
+        width: 85%;
+        padding: 1.25rem;
+    }
+
+    .logo {
+        gap: 1.5rem;
+    }
+
+    h1 {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        /* Slightly larger */
+    }
+
+    h3 {
+        padding: 1rem;
+    }
+
+    .vistFacebook,
+    .vistPhone {
+        padding: 1.25rem;
+    }
+}
+
+@media (min-width: 1025px) {
+
+    /* Large screens (desktop) */
+    .container {
+        width: 80%;
+        max-width: 600px;
+        /* Slightly wider cap */
+    }
+}
